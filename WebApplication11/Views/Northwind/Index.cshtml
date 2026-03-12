@@ -1,0 +1,22 @@
+﻿@using WebApplication11.Models
+@model ProductsViewModel
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product product in Model.Products)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.UnitPrice.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
