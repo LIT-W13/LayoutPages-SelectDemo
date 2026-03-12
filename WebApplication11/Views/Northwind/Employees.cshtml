@@ -1,0 +1,21 @@
+﻿@using WebApplication11.Models
+@model EmployeesViewModel
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <select class="form-select">
+            @foreach (Employee employee in Model.Employees)
+            {
+                if (employee.BirthDate.HasValue)
+                {
+                    <option>@employee.FirstName @employee.LastName - @employee.BirthDate.Value.ToShortDateString()</option>
+                }
+                else
+                {
+                    <option>@employee.FirstName @employee.LastName</option>
+                }
+                
+            }
+        </select>
+    </div>
+</div>

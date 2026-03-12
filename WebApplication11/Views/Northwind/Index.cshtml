@@ -12,11 +12,22 @@
     <tbody>
         @foreach (Product product in Model.Products)
         {
-            <tr>
-                <td>@product.Id</td>
-                <td>@product.Name</td>
-                <td>@product.UnitPrice.ToString("C")</td>
-            </tr>
+            if (product.UnitPrice > 75)
+            {
+                <tr class="table-danger">
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.UnitPrice.ToString("C")</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.UnitPrice.ToString("C")</td>
+                </tr>
+            }
         }
     </tbody>
 </table>
